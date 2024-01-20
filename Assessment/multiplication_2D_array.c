@@ -1,6 +1,6 @@
 #include<stdio.h>
 int i, j, k;
-void mult(int m1[][2], int m2[][2], int ans[][2], int r1, int c1, int c2){
+void multi(int m1[][2], int m2[][2], int ans[][2], int r1, int c1, int c2){
 	for(i=0; i<r1; i++){
 		for(j=0; j<c2; j++){
 			ans[i][j] = 0;
