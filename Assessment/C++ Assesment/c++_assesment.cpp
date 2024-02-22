@@ -38,7 +38,7 @@ public:
 
 int main(){
 	//Create an array of LectureDetails objects for 5 lecturers
-	//LectureDetails lecturer[5];
+	LectureDetails lecturer[5];
 	
 	//Use a for loop to get details from user
 	for(int i=0; i<5; i++){
