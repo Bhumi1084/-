@@ -1,0 +1,75 @@
+#create table Country
+create table Country
+(
+	id int(10) primary key,
+    country_name varchar(30),
+    country_name_eng varchar(30),
+    country_codde varchar(30)
+);
+
+#create table city
+create table city
+(
+	id int(10) primary key,
+    city_name varchar(30),
+    lat float(20),
+    long_ float(20),
+    country_id int(10)
+);
+
+#add foreign key in city table in country_id column
+alter table city add foreign key (country_id) references Country (id);
+
+#create table customer
+create table customer1
+(
+	id int(10) primary key,
+    customer_name varchar(30),
+    city_id int(10),
+    customer_address varchar(30),
+    next_call_date varchar(20),
+    ts_inserted timestamp(4)
+);
+
+#add foreign key in customer table in city_id column
+alter table customer1 add foreign key (city_id) references city (id);
+
+#insert data in country table
+insert into Country values
+(1, 'Deutschland', 'Gemany', 'DEU'),
+(2, 'Srbija', 'Serbia', 'SRB'),
+(3, 'Hrvatska', 'Croatia', 'HRV'),
+(4, 'United States of America', 'United States of America', 'USA'),
+(5, 'Polska', 'Poland', 'POL'),
+(6, 'Espana', 'Spain', 'ESP'),
+(7, 'Rossiya', 'Russia', 'RUS');
+
+#insert data in country table
+insert into city values
+(1, 'Berlin', 52.520008, 13.404954, 1),
+(2, 'Belgrade', 44.787197, 20.457273, 2),
+(3, 'Zagreb', 45.815399, 15.966568, 3),
+(4, 'New Your', 40.730610, -73.935242, 4),
+(5, 'Los Angeles', 34.052235, -118.243683, 4),
+(6, 'Warsaw', 52.237049, 21.017532, 5);
+
+#insert data in customer table
+insert into customer1(id, customer_name, city_id, customer_address, next_call_date) values
+(1, 'jewelry store', 4, 'Long Street 120', 2020-01-21),
+(2, 'Bakery', 1, 'kurfurstendamm 25', 2020-02-21),
+(3, 'Cafe', 1, 'TauentzienstraBe 44', 2020-01-21),
+(4, 'Restaurant', 3, 'Ulica lipa 15', 2020-01-21);
+
+#Task : 1 (join multiple tables using left join)
+#left join query
+SELECT Country.country_name_eng, city.city_name, customer1.customer_name
+FROM Country
+LEFT JOIN city ON Country.id = city.country_id
+LEFT JOIN customer1 ON city.id = customer1.city_id;
+
+#Task : 2 (join multiple tables using both left and inner join)
+#left join and inner join query
+SELECT Country.country_name_eng, city.city_name, customer1.customer_name 
+FROM Country
+LEFT JOIN city ON Country.id = city.country_id
+INNER JOIN customer1 ON city.id = customer1.city_id;
