@@ -59,6 +59,14 @@ Q-4 : What is MF Cod Rule of RDBMS Systems?
 
 =========================================================================================================
 
+Q-5 : What do you understand By Data Redundancy?
+
+=> Data redundancy refers to the repetition of data within a database or information system.
+=> It occurs when the same piece of data is stored in multiple places or multiple times within the 
+   same database or across different databases.
+
+=========================================================================================================
+
 Q-6 : What is DDL Interpreter?
 
 => DDL - Data Definition Language
