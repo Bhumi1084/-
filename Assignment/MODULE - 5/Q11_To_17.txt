@@ -38,6 +38,9 @@ insert into Customer values
 (206, 'Clemens', 'London', 300, 1007),
 (207, 'Pereira', 'Roe', 100, 1004);
 
+select * from Customer;
+select * from Salesperson;
+
 #display Names and cities of allsalespeople in London with commission above 0.12
 select SNAME, CITY from Salesperson where CITY = 'London' AND COMM > 0.12;
 
